@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
@@ -11,17 +12,43 @@
     <div class="logo">
         <img class="pr-[3rem] w-[6rem] h-auto" src="img/logo.svg" alt="">
     </div>
-    <nav class="menu flex justify-between w-full">
+    <nav class="menu hidden md:flex justify-between w-full">
         <ul class="flex">
-            <li>Übersicht</li>
-            <li>Neuen Eintrag erstellen</li>
+            <li><a href="#">Übersicht</a></li>
+            <li><a href="#">Neuen Eintrag erstellen</a></li>
         </ul>
         <ul class="flex">
-            <li>Profil</li>
-            <li>Logout</li>
+            <li><a href="#">Profil</a></li>
+            <li><a href="#">Logout</a></li>
+        </ul>
+    </nav>
+    <div class="w-full flex justify-end md:hidden ">
+     <i class="burger fa fa-bars text-black text-[2rem] cursor-pointer"></i>
+    </div>
+
+    <nav class="mobile-menu flex justify-center items-center hidden z-10 text-black absolute top-0 left-0 justify-center w-[100vw] h-[100vh] bg-white">
+        <i class="close-icon hover:rotate-90 transition-all cursor-pointer fa fa-times text-black absolute top-[1rem] right-[1rem] text-4xl"></i>
+        <ul class="mobile-menu-items text-4xl m-5 text-center">
+            <li><a href="#">Übersicht</a></li>
+            <li><a href="#">Eintrag erstellen</a></li>
+            <li><a href="#">Profil</a></li>
+            <li><a href="#">Logout</a></li>
         </ul>
     </nav>
 </header>
 
 </body>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const burger = document.querySelector('.burger');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const closeIcon = document.querySelector('.close-icon');
+        burger.addEventListener('click', function () {
+            mobileMenu.classList.remove('hidden');
+        })
+        closeIcon.addEventListener('click', function () {
+            mobileMenu.classList.add('hidden');
+        })
+    })
+</script>
 </html>
