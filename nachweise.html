@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Ihre Nachweise</title>
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+<header class="flex justify-start items-center relative h-[5rem] p-[1rem] header">
+    <div class="logo">
+        <img class="pr-[3rem] w-[6rem] h-auto" src="img/logo.svg" alt="">
+    </div>
+    <nav class="menu hidden md:flex justify-between w-full">
+        <ul class="flex">
+            <li><a href="#">Übersicht</a></li>
+            <li><a href="#">Neuen Eintrag erstellen</a></li>
+        </ul>
+        <ul class="flex">
+            <li><a href="#">Profil</a></li>
+            <li><a href="#">Logout</a></li>
+        </ul>
+    </nav>
+    <div class="w-full flex justify-end md:hidden ">
+        <i class="burger fa fa-bars text-black text-[2rem] cursor-pointer"></i>
+    </div>
+
+    <nav class="mobile-menu flex justify-center items-center hidden z-10 text-black absolute top-0 left-0 justify-center w-[100vw] h-[100vh] bg-white">
+        <i class="close-icon hover:rotate-90 transition-all cursor-pointer fa fa-times text-black absolute top-[1rem] right-[1rem] text-4xl"></i>
+        <ul class="mobile-menu-items text-4xl m-5 text-center">
+            <li><a href="#">Übersicht</a></li>
+            <li><a href="#">Eintrag erstellen</a></li>
+            <li><a href="#">Profil</a></li>
+            <li><a href="#">Logout</a></li>
+        </ul>
+    </nav>
+</header>
+<main class="container-fluid p-8">
+    <div class="headline flex flex-col content-center justify-center items-center md:flex-row md:justify-around mx-auto">
+        <div class="xl:w-8/12 p-4">
+            <h1 class="text-4xl pb-4">Ihre Nachweise</h1>
+        </div>
+        <div class="mb-4 xl:w-2/12">
+            <button class="bg-sky-400 hover:bg-sky-600 text-white font-bold py-1 px-4 rounded">
+                Eintrag hinzufügen
+            </button>
+        </div>
+        <div class="xl:w-2/12 pb-0">
+            <form action="#" class="p-4 flex flex-row">
+                <input type="radio" id="approved" name="status" value="approved">
+                <label for="approved" class="ml-2 mr-4">approved</label><br>
+                <input type="radio" id="pending" name="status" value="pending">
+                <label for="pending" class="ml-2 mr-4">pending</label><br>
+            </form>
+        </div>
+    </div>
+
+<div class="border-0 md:border-2 border-sky-400 rounded-md p-4 mb-4">
+    <div class="border-2 border-sky-400 rounded-md p-4 mb-4 md:border-0">
+        <div class="flex flex-row justify-between md:hidden">
+            <span>23.10. - 29.10.23</span>
+            <button class="bg-sky-400 hover:bg-sky-600 text-white font-bold py-1 px-4 rounded">
+                öffnen
+            </button>
+
+        </div>
+        <hr class="border border-sky-400 rounded-md my-2 md:hidden">
+
+        <div class="">
+            <ul class="flex flex-col content-center justify-center md:flex-row md:justify-around mx-auto ">
+                <li class="hidden md:block">
+                    <div class="">23.10. - 29.10.23</div>
+                </li>
+                <li>
+                    <div class="inline-flex font-bold mr-4">Abteilung:</div>
+                    <div class="inline-flex">IT</div>
+                </li>
+                <li>
+                    <div class="inline-flex font-bold mr-4">Betreuerin: </div>
+                    <div class="inline-flex"> Hans Wurst </div>
+                </li>
+                <li>
+                    <div class="inline-flex font-bold mr-4">Wochenstunden:</div>
+                    <div class="inline-flex"> 40/40</div>
+                </li>
+                <li>
+                    <div class="inline-flex font-bold mr-4">Status:</div>
+                    <div class="inline-flex font-bold text-red-500"> pending</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="border-2 border-sky-400 rounded-md p-4 mb-4 md:border-0">
+        <div class="flex flex-row justify-between md:hidden">
+            <span>16.10. - 22.10.23</span>
+            <button class="bg-sky-400 hover:bg-sky-600 text-white font-bold py-1 px-4 rounded">
+                öffnen
+            </button>
+
+        </div>
+        <hr class="border border-sky-400 rounded-md my-2 md:hidden">
+
+        <div class="">
+            <ul class="flex flex-col content-center justify-center md:flex-row md:justify-around mx-auto ">
+                <li class="hidden md:block">
+                    <div class="">16.10. - 22.10.23</div>
+                </li>
+                <li>
+                    <div class="inline-flex font-bold mr-4">Abteilung:</div>
+                    <div class="inline-flex">IT</div>
+                </li>
+                <li>
+                    <div class="inline-flex font-bold mr-4">Betreuerin: </div>
+                    <div class="inline-flex"> Hans Wurst </div>
+                </li>
+                <li>
+                    <div class="inline-flex font-bold mr-4">Wochenstunden:</div>
+                    <div class="inline-flex"> 40/40</div>
+                </li>
+                <li>
+                    <div class="inline-flex font-bold mr-4">Status:</div>
+                    <div class="inline-flex font-bold text-green-500"> approved</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+</main>
+
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const burger = document.querySelector('.burger');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const closeIcon = document.querySelector('.close-icon');
+        burger.addEventListener('click', function () {
+            mobileMenu.classList.remove('hidden');
+        })
+        closeIcon.addEventListener('click', function () {
+            mobileMenu.classList.add('hidden');
+        })
+    })
+</script>
+</html>
