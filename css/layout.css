@@ -19,11 +19,7 @@ p {
 .mobile-menu-items > * {
    margin-bottom: 50px
 }
+main {
+    padding: 4rem;
+}
 
-
-/*!* Medium devices (landscape tablets, 768px and up) *!*/
-/*@media only screen and (max-width: 768px) {*/
-/*    .menu ul > * {*/
-/*        display: none;*/
-/*    }*/
-/*}*/
