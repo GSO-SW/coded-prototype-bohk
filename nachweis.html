@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
     <title>Title</title>
     <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
@@ -11,19 +13,32 @@
     <div class="logo">
         <img class="pr-[3rem] w-[6rem] h-auto" src="img/logo.svg" alt="">
     </div>
-    <nav class="menu flex justify-between w-full">
+    <nav class="menu hidden md:flex justify-between w-full">
         <ul class="flex">
-            <li>Übersicht</li>
-            <li>Neuen Eintrag erstellen</li>
+            <li><a href="#">Übersicht</a></li>
+            <li><a href="#">Neuen Eintrag erstellen</a></li>
         </ul>
         <ul class="flex">
-            <li>Profil</li>
-            <li>Logout</li>
+            <li><a href="#">Profil</a></li>
+            <li><a href="#">Logout</a></li>
+        </ul>
+    </nav>
+    <div class="w-full flex justify-end md:hidden ">
+        <i class="burger fa fa-bars text-black text-[2rem] cursor-pointer"></i>
+    </div>
+
+    <nav class="mobile-menu flex justify-center items-center hidden z-10 text-black absolute top-0 left-0 justify-center w-[100vw] h-[100vh] bg-white">
+        <i class="close-icon hover:rotate-90 transition-all cursor-pointer fa fa-times text-black absolute top-[1rem] right-[1rem] text-4xl"></i>
+        <ul class="mobile-menu-items text-4xl m-5 text-center">
+            <li><a href="#">Übersicht</a></li>
+            <li><a href="#">Eintrag erstellen</a></li>
+            <li><a href="#">Profil</a></li>
+            <li><a href="#">Logout</a></li>
         </ul>
     </nav>
 </header>
 
-<main class="w-full">
+<main class="w-full md:p-16 p-6">
     <div class="info">
         <h1 class="font-bold text-4xl mb-2">Auszubildende/-r</h1>
         <a class="text-h1"></a>
@@ -58,45 +73,55 @@
 
         <div class="mt-10">
             Tätigkeiten:
-            <div class="entries-container border border-black rounded">
-                <div class="header-row flex-row hidden md:flex">
-                    <div class="border border-black p-2 w-10"></div>
+            <div class="entries-container border border-black rounded text-xs md:text-sm">
+                <div class="header-row flex-row flex text-center">
+                    <div class="border border-black p-2 hidden md:block w-10"></div>
                     <div class="border border-black p-2 flex-grow"> Ausgeführte Arbeiten, Unterricht usw.</div>
-                    <div class="border border-black p-2 w-24"> EinzelStd.</div>
-                    <div class="border border-black p-2 w-24"> GesamtStd.</div>
-                    <div class="border border-black p-2 w-24"> Abteilung</div>
-                </div>
-                <div class="header-row flex-row flex md:hidden">
-                    <div class="border border-black p-2 w-10"></div>
-                    <div class="border border-black p-2 flex-grow"> Ausgeführte Arbeiten, Unterricht usw.</div>
-                    <div class="border border-black p-2 w-24"> Std.</div>
-                    <div class="border border-black p-2 w-24"> Std/Tag</div>
+                    <div class="border border-black p-2 w-12"> Std.</div>
+                    <div class="border border-black p-2 w-16 md:w-20">Std/Tag</div>
+                    <div class="border border-black p-2 hidden md:block w-24"> Abteilung</div>
                 </div>
                 <div class="header-row flex flex-row">
                     <div class="border border-black p-2 w-10">Mo</div>
-                    <div class="border border-grey flex-grow" style="border-right: 1px grey dotted">
-                        <div class="flex flex-col">
-                            <div class="flex flex-row ">
-                                <div class="flex gap-x-2 w-full mb-2">
-                                    <button class="w-10 border text-3xl border-black rounded">x</button>
-                                    <textarea class="w-full h-full"></textarea>
+                    <div class="border border-grey flex-grow border border-black">
+                        <div id="text-std-button-container" class="flex flex-col ">
+                            <div id="text-std-container" class="flex flex-row h-12 md:h-16 border-b border-grey">
+                                <div id="text-container" class="flex gap-x-2 flex-grow mb-2">
+                                    <button class="w-10 border text-2xl border-black rounded mt-1 ml-1">X</button>
+                                    <textarea class="w-full h-full p-1 h-auto" style="resize: none;" placeholder="Trage hier ein was du so gemacht hast."></textarea>
                                 </div>
-                                <div class="border border-grey p-2 md:w-24 w-full"
-                                     style="border-left: 1px grey dotted; border-right: 1px black solid"><input
-                                        type="number" class="w-full h-full"></div>
+                                <div id="std-container" class="p-2 w-12"
+                                     style="border-left: 1px grey dotted;">
+                                    <input type="number" placeholder="0" class="w-full h-full"></div>
                             </div>
-                            <button class="w-full border border-black rounded">Tätigkeit hinzufügen</button>
+                            <button class="w-auto m-1 p-2 border border-black rounded">Tätigkeit hinzufügen</button>
                         </div>
-
                     </div>
-                    <div class="border border-black p-2 w-24"><input type="number" class="w-full h-full">
+                    <div class="border border-black p-2 md:w-20 w-16">
+                        <input type="number" placeholder="0" class="w-full h-full font-bold">
                     </div>
-                    <div class="border border-black p-2 md:w-24 w-full hidden md:flex"><input type="text" class="w-full h-full"></div>
+                    <div class="border border-black p-2 md:w-24 w-full hidden md:flex">
+                        <input type="text" placeholder="IT" class="w-full h-full text-center p-1">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </main>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const burger = document.querySelector('.burger');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const closeIcon = document.querySelector('.close-icon');
+        burger.addEventListener('click', function () {
+            mobileMenu.classList.remove('hidden');
+        })
+        closeIcon.addEventListener('click', function () {
+            mobileMenu.classList.add('hidden');
+        })
+    })
+</script>
 
 
 </body>
