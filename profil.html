@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
@@ -12,48 +13,88 @@
     <div class="logo">
         <img class="pr-[3rem] w-[6rem] h-auto" src="img/logo.svg" alt="">
     </div>
-    <nav class="menu flex justify-between w-full">
+    <nav class="menu hidden md:flex justify-between w-full">
         <ul class="flex">
-            <li>Übersicht</li>
-            <li>Neuen Eintrag erstellen</li>
+            <li><a href="#">Übersicht</a></li>
+            <li><a href="#">Neuen Eintrag erstellen</a></li>
         </ul>
         <ul class="flex">
-            <li>Profil</li>
-            <li>Logout</li>
+            <li><a href="#">Profil</a></li>
+            <li><a href="#">Logout</a></li>
+        </ul>
+    </nav>
+    <div class="w-full flex justify-end md:hidden ">
+     <i class="burger fa fa-bars text-black text-[2rem] cursor-pointer"></i>
+    </div>
+
+    <nav class="mobile-menu flex justify-center items-center hidden z-10 text-black absolute top-0 left-0 justify-center w-[100vw] h-[100vh] bg-white">
+        <i class="close-icon hover:rotate-90 transition-all cursor-pointer fa fa-times text-black absolute top-[1rem] right-[1rem] text-4xl"></i>
+        <ul class="mobile-menu-items text-4xl m-5 text-center">
+            <li><a href="#">Übersicht</a></li>
+            <li><a href="#">Eintrag erstellen</a></li>
+            <li><a href="#">Profil</a></li>
+            <li><a href="#">Logout</a></li>
         </ul>
     </nav>
 </header>
+
 <div style="
     padding-left: 2rem;
     padding-top: 2rem;
 ">
 
 
-<h1 class="text-5xl">Profil</h1>
-<p class="text-xl">Ihre Daten</p>
-<ul>
-    <li>Azubinummer:    XXXXX</li>
-    <li>Ausbildungsjahr:    1/2/3</li>
-    <li>Anrede: He/She/It</li>
-    <li>Name:   Max Mustermaus</li>
-    <li>Anschrift:  Blibablubstr. 1 50666 Koeln</li>
-    <li>E-Mail: Max.mustermaus@mausis.de</li>
-    <li>Telefon: +123456789</li>
-    <li>Geburtsdatum: 01.01.1999</li>
-    <li>Staatsangehörigkeit: Ja</li>
-  </ul>
+<h1 class="text-5xl pb-3">Profil</h1>
+<p class="text-xl py-4">Ihre Daten</p>
+<div class="grid grid-cols-2 gap-2 md:w-1/2">
+    <div>Azubinummer:</div>
+    <div>xxxxxxx</div>
+    <div>Ausbildungsjahr:</div>
+    <div>1/2/3</div>
+    <div>Anrede:</div>
+    <div>He/She/it</div>
+    <div>Name:</div>
+    <div>Jan</div>
+    <div>Anschrift:</div>
+    <div>Mustermausistr. 6</div>
+    <div>E-Mail:</div>
+    <div>xXWebDesignerXx@design.de</div>
+    <div>Telefon:</div>
+    <div>112</div>
+    <div>Geburtsdatum:</div>
+    <div>01.01.1870</div>
+    <div>Staatsangehörigkeit:</div>
+    <div>Alman</div>
+</div>
 </div>
 
 
-<footer class="flex justify-start items-center relative h-[5rem] p-[1rem] header">
-    <nav class="menu flex justify-center w-full">
-        <ul class="flex">
-            <li>Persönliche Daten ändern</li>
-            <li>Passwort ändern</li>
-            <li>E-Mail-Adresse ändern</li>
+<footer class="flex justify-start relative h-[5rem] p-[1rem] header md:w-1/2">
+    <nav class="menu flex w-full">
+        <ul class="flex flex-col md:flex-row">
+            <li class="border border-black border-solid"><a href="#">   Persönliche Daten ändern</a></li>
+            <li class="border border-black border-solid"><a href="#">Passwort ändern</a></li>
+            <li class="border border-black border-solid"><a href="#">E-Mail-Adresse ändern</a></li>
         </ul>
     </nav>
 </footer>
 
 </body>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const burger = document.querySelector('.burger');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const closeIcon = document.querySelector('.close-icon');
+        burger.addEventListener('click', function () {
+            mobileMenu.classList.remove('hidden');
+        })
+        closeIcon.addEventListener('click', function () {
+            mobileMenu.classList.add('hidden');
+        })
+    })
+</script>
 </html>
+
+
+
+
