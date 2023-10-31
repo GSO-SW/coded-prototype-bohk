@@ -41,26 +41,26 @@
 <div id="popup-wrapper" class="hidden">
     <div class="absolute top-0 w-full h-full bg-black opacity-50"></div>
     <div id="popup"
-         class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col gap-4 rounded-xl shadow-xl border-gray-400 border p-4 bg-gray-300 ">
-        <div class="flex flex-row justify-between">
+         class="absolute w-5/6 md:w-1/2 lg:w-1/3 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-4 rounded-xl shadow-xl border-gray-400 border p-4 bg-gray-300 ">
+        <div class="flex flex-row justify-between w-full">
             <div class="font-bold text-lg">Neuer Eintrag</div>
             <button onclick="togglePopup()" class="w-8 h-8 rounded-full text-center text-lg text-white font-bold bg-rose-400 hover:bg-rose-600">
                 X
             </button>
         </div>
-        ausgeführte Arbeiten:
-        <textarea class="rounded p-2" rows="5" placeholder="Heute habe ich..."></textarea>
-        <div class="flex flex-row gap-4">
-            <div>
-                <label>Stunden</label>
-                <input class="rounded text-center p-1" type="number" value="8">
-            </div>
-            <div>
-                <label>Abteilung</label>
-                <input class="rounded text-center p-1" type="text" value="IT">
-            </div>
+        <div>
+            ausgeführte Arbeiten:
+            <textarea class="rounded p-2 w-full" rows="5" placeholder="Heute habe ich..."></textarea>
         </div>
-        <button onclick="togglePopup()" class="rounded bg-sky-400 hover:bg-sky-600 p-1 text-white">Speichern</button>
+        <div>
+            Stunden
+            <input class="rounded text-center p-1 w-full" type="number" value="8">
+        </div>
+        <div>
+            Abteilung
+            <input class="rounded text-center p-1 w-full" type="text" value="IT">
+        </div>
+        <button onclick="togglePopup()" class="rounded bg-sky-400 hover:bg-sky-600 py-2 px-4 text-white">Speichern</button>
     </div>
 </div>
 
