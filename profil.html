@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-<header class="flex justify-start items-center relative h-[5rem] p-[1rem] header">
+<body class="bg-gray-100 ">
+<header class="flex justify-start items-center relative h-[5rem] p-[1rem] header bg-white">
     <div class="logo">
         <img class="pr-[3rem] w-[6rem] h-auto" src="img/logo.svg" alt="">
     </div>
@@ -38,45 +38,69 @@
         </ul>
     </nav>
 </header>
+<main class="md:p-[2rem] p-[1rem]">
 
-<div class="md:p-[2rem] p-[1rem]">
 
+<div class="bg-white border border-sky-200 rounded-lg p-6">
+
+
+<div class="md:p-[1rem]">
 
 <h1 class="text-5xl pb-3">Profil</h1>
 <p class="text-xl py-4">Ihre Daten</p>
-<div class="grid grid-cols-2 gap-2 lg:w-1/2 break-words">
-    <div>Azubinummer:</div>
-    <div>xxxxxxx</div>
-    <div>Ausbildungsjahr:</div>
-    <div>1/2/3</div>
-    <div>Anrede:</div>
-    <div>He/She/it</div>
-    <div>Name:</div>
-    <div>Jan</div>
-    <div>Anschrift:</div>
-    <div>Mustermausistr. 6</div>
-    <div>E-Mail:</div>
-    <div >xXWebDesignerXx@design.de</div>
-    <div>Telefon:</div>
-    <div>112</div>
-    <div>Geburtsdatum:</div>
-    <div>01.01.1870</div>
-    <div>Staatsangehörigkeit:</div>
-    <div>Alman</div>
+<div class="lg:w-1/2 break-words">
+    <div class="flex flex-col md:flex-row gap-1 border-b border-solid border-sky-400 py-2">
+        <div class="font-bold md:w-1/2">Azubinummer:</div>
+        <div class="md:w-1/2">xxxxxxx</div>
+    </div>
+    <div class="flex flex-col md:flex-row gap-1 border-b border-solid border-sky-400 py-2">
+        <div class="font-bold md:w-1/2">Ausbildungsjahr:</div>
+        <div class="md:w-1/2">1/2/3</div>
+    </div>
+    <div class="flex flex-col md:flex-row gap-1 border-b border-solid border-sky-400 py-2">
+        <div class="font-bold md:w-1/2">Anrede:</div>
+        <div class="md:w-1/2">He/She/it</div>
+    </div>
+    <div class="flex flex-col md:flex-row gap-1 border-b border-solid border-sky-400 py-2">
+        <div class="font-bold md:w-1/2">Name:</div>
+        <div class="md:w-1/2">Jan</div>
+    </div>
+    <div class="flex flex-col md:flex-row gap-1 border-b border-solid border-sky-400 py-2">
+        <div class="font-bold md:w-1/2">Anschrift:</div>
+        <div class="md:w-1/2">Mustermausistr. 6</div>
+    </div>
+    <div class="flex flex-col md:flex-row gap-1 border-b border-solid border-sky-400 py-2">
+        <div class="font-bold md:w-1/2">E-Mail:</div>
+        <div class="md:w-1/2">xXWebDesignerXx@design.de</div>
+    </div>
+    <div class="flex flex-col md:flex-row gap-1 border-b border-solid border-sky-400 py-2">
+        <div class="font-bold md:w-1/2">Telefon:</div>
+        <div class="md:w-1/2">112</div>
+    </div>
+    <div class="flex flex-col md:flex-row gap-1 border-b border-solid border-sky-400 py-2">
+        <div class="font-bold md:w-1/2">Geburtsdatum:</div>
+        <div class="md:w-1/2">01.01.1870</div>
+    </div>
+    <div class="flex flex-col md:flex-row gap-1 border-b border-solid border-sky-400 py-2">
+        <div class="font-bold md:w-1/2">Staatsangehörigkeit:</div>
+        <div class="md:w-1/2">Alman</div>
+    </div>
+
 </div>
 </div>
 
 
-<footer class="flex justify-start relative md:p-[2rem] p-[1rem] xl:w-[60%]">
+<div class="flex justify-start relative md:p-[1rem]">
     <nav class="menu flex w-full">
-        <ul class="flex flex-col md:flex-row libuttonbreite">
-            <li class="libuttonbreite border border-solid flex justify-center items-center px-2 my-2 py-2 bg-sky-400 hover:bg-sky-600 font-bold text-white rounded"><a href="#" class="">Persönliche Daten ändern</a></li>
-            <li class="libuttonbreite border border-solid flex justify-center items-center px-2 my-2 py-2 bg-sky-400 hover:bg-sky-600 font-bold text-white rounded"><a href="#">Passwort ändern</a></li>
-            <li class="libuttonbreite border border-solid flex justify-center items-center px-2 my-2 py-2 bg-sky-400 hover:bg-sky-600 font-bold text-white rounded"><a href="#">E-Mail-Adresse ändern</a></li>
+        <ul class="flex flex-col md:flex-row libuttonbreite my-[2rem]">
+            <li class="libuttonbreite md:mr-[2rem] border border-solid flex justify-center items-center px-2 my-2 py-2 bg-sky-400 hover:bg-sky-600 font-bold text-white rounded"><a href="#" class="">Persönliche Daten ändern</a></li>
+            <li class="libuttonbreite md:mr-[2rem] border border-solid flex justify-center items-center px-2 my-2 py-2 bg-sky-400 hover:bg-sky-600 font-bold text-white rounded"><a href="#">Passwort ändern</a></li>
+            <li class="libuttonbreite md:mr-[1rem] border border-solid flex justify-center items-center px-2 my-2 py-2 bg-sky-400 hover:bg-sky-600 font-bold text-white rounded"><a href="#">E-Mail-Adresse ändern</a></li>
         </ul>
     </nav>
-</footer>
-
+</div>
+</div>
+</main>
 </body>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
