@@ -8,18 +8,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-<header class="flex justify-start items-center relative h-[5rem] p-[1rem] header">
+<body class="bg-gray-100">
+<header class="flex justify-start items-center relative h-[5rem] p-[1rem] header bg-white">
     <div class="logo">
         <img class="pr-[3rem] w-[6rem] h-auto" src="img/logo.svg" alt="">
     </div>
     <nav class="menu hidden md:flex justify-between w-full">
         <ul class="flex">
-            <li><a href="#">Übersicht</a></li>
-            <li><a href="#">Neuen Eintrag erstellen</a></li>
+            <li><a href="nachweise.html">Übersicht</a></li>
+            <li><a href="nachweis.html">Neuen Eintrag erstellen</a></li>
         </ul>
         <ul class="flex">
-            <li><a href="#">Profil</a></li>
+            <li><a href="profil.html">Profil</a></li>
             <li><a href="#">Logout</a></li>
         </ul>
     </nav>
@@ -30,80 +30,170 @@
     <nav class="mobile-menu flex justify-center items-center hidden z-10 text-black absolute top-0 left-0 justify-center w-[100vw] h-[100vh] bg-white">
         <i class="close-icon hover:rotate-90 transition-all cursor-pointer fa fa-times text-black absolute top-[1rem] right-[1rem] text-4xl"></i>
         <ul class="mobile-menu-items text-4xl m-5 text-center">
-            <li><a href="#">Übersicht</a></li>
-            <li><a href="#">Eintrag erstellen</a></li>
-            <li><a href="#">Profil</a></li>
+            <li><a href="nachweise.html">Übersicht</a></li>
+            <li><a href="nachweis.html">Eintrag erstellen</a></li>
+            <li><a href="profil.html">Profil</a></li>
             <li><a href="#">Logout</a></li>
         </ul>
     </nav>
 </header>
 
 <main class="w-full md:p-16 p-6">
-    <div class="info">
-        <h1 class="font-bold text-4xl mb-2">Auszubildende/-r</h1>
-        <a class="text-h1"></a>
-        <ul>
-            <li>
-                Azubinummer: 12345678
-            </li>
-            <li>
-                Anrede: Herr/Frau
-            </li>
-            <li>
-                Name: Hans Wurst
-            </li>
-        </ul>
-    </div>
-    <div class="entries mt-10">
-        <h1 class="font-bold text-2xl mb-2">Ausbildungsnachweis</h1>
-        <div class="flex flex-wrap flex-col lg:flex-row justify-between gap-x-4 gap-y-4">
-            <div class="flex flex-col">
-                <label for="year">Ausbildungsjahr:</label>
-                <input id="year" name="year" type="text" class="border border-black rounded">
-            </div>
-            <div class="flex flex-col">
-                <label for="area">Abteilung:</label>
-                <input id="area" name="area" type="text" class="border border-black rounded">
-            </div>
-            <div class="flex flex-col">
-                <label for="week">Ausbildungswoche:</label>
-                <input id="week" name="week" type="text" class="border border-black rounded">
+    <div class="mt-10 xl:px-40 flex flex-col items-center lg:flex-row justify-between">
+        <h1 class="font-bold text-2xl md:text-4xl mb-2">Ausbildungsnachweise</h1>
+        <div class="mt-4 lg:mt-0">
+            <label for="week" class="mr-4">Für die Woche:</label>
+            <div>
+                <button class="px-2 rounded-full bg-gray-200"> < </button>
+                <input id="week" name="week" value="30.10.23 - 05.11.23" type="text" class="border border-gray-300 bg-white rounded-full text-center">
+                <button class="px-2 rounded-full bg-gray-200"> > </button>
             </div>
         </div>
+    </div>
 
-        <div class="mt-10">
-            Tätigkeiten:
-            <div class="entries-container border border-black rounded text-xs md:text-sm">
-                <div class="header-row flex-row flex text-center">
-                    <div class="border border-black p-2 hidden md:block w-10"></div>
-                    <div class="border border-black p-2 flex-grow"> Ausgeführte Arbeiten, Unterricht usw.</div>
-                    <div class="border border-black p-2 w-12"> Std.</div>
-                    <div class="border border-black p-2 w-16 md:w-20">Std/Tag</div>
-                    <div class="border border-black p-2 hidden md:block w-24"> Abteilung</div>
-                </div>
-                <div class="header-row flex flex-row">
-                    <div class="border border-black p-2 w-10">Mo</div>
-                    <div class="border border-grey flex-grow border border-black">
-                        <div id="text-std-button-container" class="flex flex-col ">
-                            <div id="text-std-container" class="flex flex-row h-12 md:h-16 border-b border-grey">
-                                <div id="text-container" class="flex gap-x-2 flex-grow mb-2">
-                                    <button class="w-10 border text-2xl border-black rounded mt-1 ml-1">X</button>
-                                    <textarea class="w-full h-full p-1 h-auto" style="resize: none;" placeholder="Trage hier ein was du so gemacht hast."></textarea>
-                                </div>
-                                <div id="std-container" class="p-2 w-12"
-                                     style="border-left: 1px grey dotted;">
-                                    <input type="number" placeholder="0" class="w-full h-full"></div>
+    <div class="mt-10 xl:px-40">
+        Tätigkeiten:
+        <div class="entries-container border border-gray-300 rounded text-xs md:text-sm bg-white">
+            <div class="header-row flex-row flex text-center">
+                <div class="border border-gray-300 p-2 hidden md:block w-10 bg-gray-200"></div>
+                <div class="border border-gray-300 p-2 flex-grow bg-gray-200"> Ausgeführte Arbeiten, Unterricht usw.</div>
+                <div class="border border-gray-300 p-2 w-12 bg-gray-200"> Std.</div>
+                <div class="border border-gray-300 p-2 w-16 md:w-20 bg-gray-200">Std/Tag</div>
+                <div class="border border-gray-300 p-2 hidden md:block w-24 bg-gray-200"> Abteilung</div>
+            </div>
+            <div class="header-row flex flex-row">
+                <div class="flex justify-center items-center border border-gray-300 font-bold w-10">Mo</div>
+                <div class="border border-grey flex-grow border border-gray-300">
+                    <div class="text-std-button-container flex flex-col">
+                        <div class="text-std-container flex flex-row h-12 md:h-16 border-b border-grey">
+                            <div class="text-container flex gap-x-2 flex-grow items-center mb-2">
+                                <button class="w-5 h-5 text-sm bg-rose-400 hover:bg-rose-500 text-white rounded-full font-bold mt-1 ml-1">X</button>
+                                <textarea class="w-full h-full p-3 h-auto" style="resize: none;" placeholder="Trage hier ein was du so gemacht hast.">Kaffe getrunken</textarea>
                             </div>
-                            <button class="w-auto m-1 p-2 border border-black rounded">Tätigkeit hinzufügen</button>
+                            <div class="std-container p-2 w-12"
+                                 style="border-left: 1px grey dotted;">
+                                <input type="number" value="4" class="w-full h-full"></div>
                         </div>
-                    </div>
-                    <div class="border border-black p-2 md:w-20 w-16">
-                        <input type="number" placeholder="0" class="w-full h-full font-bold">
-                    </div>
-                    <div class="border border-black p-2 md:w-24 w-full hidden md:flex">
-                        <input type="text" placeholder="IT" class="w-full h-full text-center p-1">
+                        <div class="text-std-container flex flex-row h-12 md:h-16 border-b border-grey">
+                            <div class="text-container flex gap-x-2 flex-grow items-center mb-2">
+                                <button class="w-5 h-5 text-sm bg-rose-400 hover:bg-rose-500 text-white rounded-full font-bold mt-1 ml-1">X</button>
+                                <textarea class="w-full h-full p-3 h-auto" style="resize: none;" placeholder="Trage hier ein was du so gemacht hast.">Website programmiert</textarea>
+                            </div>
+                            <div class="std-container p-2 w-12"
+                                 style="border-left: 1px grey dotted;">
+                                <input type="number" value="4" class="w-full h-full"></div>
+                        </div>
+                        <button class="w-auto m-1 p-1 rounded text-white bg-sky-400 hover:bg-sky-600">Tätigkeit hinzufügen</button>
                     </div>
                 </div>
+                <div class="border border-gray-300 p-2 md:w-20 w-16 font-bold flex items-center justify-center">
+                    8
+                </div>
+                <div class="border border-gray-300 p-2 md:w-24 w-full hidden md:flex">
+                    <input type="text" value="IT" class="w-full h-full text-center p-1">
+                </div>
+            </div>
+            <div class="header-row flex flex-row">
+                <div class="flex justify-center items-center border border-gray-300 font-bold w-10">Di</div>
+                <div class="border border-grey flex-grow border border-gray-300">
+                    <div class="text-std-button-container flex flex-col">
+                        <div class="text-std-container flex flex-row h-12 md:h-16 border-b border-grey">
+                            <div class="text-container flex gap-x-2 flex-grow items-center mb-2">
+                                <button class="w-5 h-5 text-sm bg-rose-400 hover:bg-rose-500 text-white rounded-full font-bold mt-1 ml-1">X</button>
+                                <textarea class="w-full h-full p-3 h-auto" style="resize: none;" placeholder="Trage hier ein was du so gemacht hast.">Kaffe getrunken</textarea>
+                            </div>
+                            <div class="std-container p-2 w-12"
+                                 style="border-left: 1px grey dotted;">
+                                <input type="number" value="4" class="w-full h-full"></div>
+                        </div>
+                        <button class="w-auto m-1 p-1 rounded text-white bg-sky-400 hover:bg-sky-600">Tätigkeit hinzufügen</button>
+                    </div>
+                </div>
+                <div class="border border-gray-300 p-2 md:w-20 w-16 font-bold flex items-center justify-center">
+                    8
+                </div>
+                <div class="border border-gray-300 p-2 md:w-24 w-full hidden md:flex">
+                    <input type="text" value="IT" class="w-full h-full text-center p-1">
+                </div>
+            </div>
+            <div class="header-row flex flex-row">
+                <div class="flex justify-center items-center border border-gray-300 font-bold w-10">Mi</div>
+                <div class="border border-grey flex-grow border border-gray-300">
+                    <div class="text-std-button-container flex flex-col">
+                        <div class="text-std-container flex flex-row h-12 md:h-16 border-b border-grey">
+                            <div class="text-container flex gap-x-2 flex-grow items-center mb-2">
+                                <button class="w-5 h-5 text-sm bg-rose-400 hover:bg-rose-500 text-white rounded-full font-bold mt-1 ml-1">X</button>
+                                <textarea class="w-full h-full p-3 h-auto" style="resize: none;" placeholder="Trage hier ein was du so gemacht hast."></textarea>
+                            </div>
+                            <div class="std-container p-2 w-12"
+                                 style="border-left: 1px grey dotted;">
+                                <input type="number" placeholder="0" class="w-full h-full"></div>
+                        </div>
+                        <button class="w-auto m-1 p-1 rounded text-white bg-sky-400 hover:bg-sky-600">Tätigkeit hinzufügen</button>
+                    </div>
+                </div>
+                <div class="border border-gray-300 text-gray-400 p-2 md:w-20 w-16 font-bold flex items-center justify-center">
+                    0
+                </div>
+                <div class="border border-gray-300 p-2 md:w-24 w-full hidden md:flex">
+                    <input type="text" value="IT" class="w-full h-full text-center p-1">
+                </div>
+            </div>
+            <div class="header-row flex flex-row">
+                <div class="flex justify-center items-center border border-gray-300 font-bold w-10">Do</div>
+                <div class="border border-grey flex-grow border border-gray-300">
+                    <div class="text-std-button-container flex flex-col">
+                        <div class="text-std-container flex flex-row h-12 md:h-16 border-b border-grey">
+                            <div class="text-container flex gap-x-2 flex-grow items-center mb-2">
+                                <button class="w-5 h-5 text-sm bg-rose-400 hover:bg-rose-500 text-white rounded-full font-bold mt-1 ml-1">X</button>
+                                <textarea class="w-full h-full p-3 h-auto" style="resize: none;" placeholder="Trage hier ein was du so gemacht hast."></textarea>
+                            </div>
+                            <div class="std-container p-2 w-12"
+                                 style="border-left: 1px grey dotted;">
+                                <input type="number" placeholder="0" class="w-full h-full"></div>
+                        </div>
+                        <button class="w-auto m-1 p-1 rounded text-white bg-sky-400 hover:bg-sky-600">Tätigkeit hinzufügen</button>
+                    </div>
+                </div>
+                <div class="border border-gray-300 text-gray-400 p-2 md:w-20 w-16 font-bold flex items-center justify-center">
+                    0
+                </div>
+                <div class="border border-gray-300 p-2 md:w-24 w-full hidden md:flex">
+                    <input type="text" value="IT" class="w-full h-full text-center p-1">
+                </div>
+            </div>
+            <div class="header-row flex flex-row">
+                <div class="flex justify-center items-center border border-gray-300 font-bold w-10">Fr</div>
+                <div class="border border-grey flex-grow border border-gray-300">
+                    <div class="text-std-button-container flex flex-col">
+                        <div class="text-std-container flex flex-row h-12 md:h-16 border-b border-grey">
+                            <div class="text-container flex gap-x-2 flex-grow items-center mb-2">
+                                <button class="w-5 h-5 text-sm bg-rose-400 hover:bg-rose-500 text-white rounded-full font-bold mt-1 ml-1">X</button>
+                                <textarea class="w-full h-full p-3 h-auto" style="resize: none;" placeholder="Trage hier ein was du so gemacht hast."></textarea>
+                            </div>
+                            <div class="std-container p-2 w-12"
+                                 style="border-left: 1px grey dotted;">
+                                <input type="number" placeholder="0" class="w-full h-full"></div>
+                        </div>
+                        <button class="w-auto m-1 p-1 rounded text-white bg-sky-400 hover:bg-sky-600">Tätigkeit hinzufügen</button>
+                    </div>
+                </div>
+                <div class="border border-gray-300 text-gray-400 p-2 md:w-20 w-16 font-bold flex items-center justify-center">
+                    0
+                </div>
+                <div class="border border-gray-300 p-2 md:w-24 w-full hidden md:flex">
+                    <input type="text" value="IT" class="w-full h-full text-center p-1">
+                </div>
+            </div>
+        </div>
+        <div class="mt-10 flex flex-col lg:flex-row justify-between items-center gap-y-3">
+            <div>
+                <input type="checkbox" id="confirmation" name="confirmation">
+                <label for="confirmation">Hiermit bestätige ich, dass ich den Nachweis selbst geschrieben habe.*</label>
+            </div>
+            <div class="flex align-center">
+                <input type="button" class="w-auto m-1 p-2 rounded text-white bg-blue-400 hover:bg-blue-600" value="Speichern">
+                <input type="button" class="w-auto m-1 p-2 rounded text-white bg-blue-400 hover:bg-blue-600" value="Ausbildungsnachweis abschicken">
             </div>
         </div>
     </div>
