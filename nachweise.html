@@ -15,11 +15,11 @@
     </div>
     <nav class="menu hidden md:flex justify-between w-full">
         <ul class="flex">
-            <li><a href="#">Übersicht</a></li>
-            <li><a href="#">Neuen Eintrag erstellen</a></li>
+            <li><a href="/nachweise.html">Übersicht</a></li>
+            <li><a href="/nachweis.html">Neuen Eintrag erstellen</a></li>
         </ul>
         <ul class="flex">
-            <li><a href="#">Profil</a></li>
+            <li><a href="/profil.html">Profil</a></li>
             <li><a href="#">Logout</a></li>
         </ul>
     </nav>
@@ -30,109 +30,119 @@
     <nav class="mobile-menu flex justify-center items-center hidden z-10 text-black absolute top-0 left-0 justify-center w-[100vw] h-[100vh] bg-white">
         <i class="close-icon hover:rotate-90 transition-all cursor-pointer fa fa-times text-black absolute top-[1rem] right-[1rem] text-4xl"></i>
         <ul class="mobile-menu-items text-4xl m-5 text-center">
-            <li><a href="#">Übersicht</a></li>
-            <li><a href="#">Eintrag erstellen</a></li>
-            <li><a href="#">Profil</a></li>
+            <li><a href="/nachweise.html">Übersicht</a></li>
+            <li><a href="/nachweis.html">Eintrag erstellen</a></li>
+            <li><a href="/profil.html">Profil</a></li>
             <li><a href="#">Logout</a></li>
         </ul>
     </nav>
 </header>
 <main class="container-fluid p-8">
-    <div class="headline flex flex-col content-center justify-center items-center md:flex-row md:justify-around mx-auto">
+    <div class="headline flex flex-col content-center justify-center items-center md:flex-row md:justify-between mx-auto">
         <div class="xl:w-8/12 p-4">
             <h1 class="text-4xl pb-4">Ihre Nachweise</h1>
         </div>
-        <div class="mb-4 xl:w-2/12">
-            <button class="bg-sky-400 hover:bg-sky-600 text-white font-bold py-1 px-4 rounded">
-                Eintrag hinzufügen
-            </button>
+        <div class="mb-4 xl:w-2/12 ">
+            <a href="/nachweis.html"
+               class="bg-sky-400 hover:bg-sky-600  py-1 px-6 rounded flex flex-row content-center">
+                <img src="img/edit.svg" class="h-6 w-6 inline" alt="edit link">
+                <span class="ml-1 w-auto text-white font-bold">Eintrag hinzufügen
+                </span>
+            </a>
         </div>
-        <div class="xl:w-2/12 pb-0">
-            <form action="#" class="p-4 flex flex-row">
+    </div>
+
+    <div class="mt-8">
+        <div class="w-full item-center pb-0 mb-4 ">
+            <form action="#" class=" flex flex-row p-2 bg-sky-100 rounded">
+                <span class="mr-4">Filter:</span>
                 <input type="radio" id="approved" name="status" value="approved">
-                <label for="approved" class="ml-2 mr-4">approved</label><br>
+                <label for="approved" class="ml-1 mr-4">approved</label><br>
                 <input type="radio" id="pending" name="status" value="pending">
-                <label for="pending" class="ml-2 mr-4">pending</label><br>
+                <label for="pending" class="ml-1 mr-4">pending</label><br>
             </form>
         </div>
+        <div class="border-2 border-gray-300 rounded-md p-4 mb-4 md:mb-1 md:border-0">
+            <div class="flex flex-row justify-between md:hidden">
+                <span>23.10. - 29.10.23</span>
+                <a class="hover:opacity-70">
+                    <img src="img/edit_blue.svg" class="h-6 w-6 inline" alt="edit link">
+                </a>
+
+            </div>
+            <hr class="border border-gray-300 rounded-md my-2 md:hidden">
+
+            <div class="">
+                <ul class="flex flex-col content-center justify-center md:flex-row md:justify-around mx-auto ">
+                    <li class="hidden md:block">
+                        <div class="">23.10. - 29.10.23</div>
+                    </li>
+                    <li>
+                        <div class="inline-flex font-bold mr-4">Abteilung:</div>
+                        <div class="inline-flex">IT</div>
+                    </li>
+                    <li>
+                        <div class="inline-flex font-bold mr-4">BetreuerIn:</div>
+                        <div class="inline-flex"> Hans Wurst</div>
+                    </li>
+                    <li>
+                        <div class="inline-flex font-bold mr-4">Wochenstunden:</div>
+                        <div class="inline-flex"> 40/40</div>
+                    </li>
+                    <li>
+                        <div class="inline-flex font-bold mr-4">Status:</div>
+                        <div class="inline-flex font-bold text-red-500"> pending</div>
+                    </li>
+                    <li class="hidden md:block">
+                        <a href="/nachweis.html" class="hover:opacity-70">
+                            <img src="img/edit_blue.svg" class="h-6 w-6 inline" alt="edit link">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <hr class="border border-gray-300 hidden md:block">
+        <div class="border-2 border-gray-300 rounded-md p-4 mb-4 md:mb-1 md:border-0">
+            <div class="flex flex-row justify-between md:hidden">
+                <span>16.10. - 22.10.23</span>
+                <a href="/nachweis.html" class="hover:opacity-70">
+                    <img src="img/edit_blue.svg" class="h-6 w-6 inline" alt="edit link">
+                </a>
+
+            </div>
+            <hr class="border border-gray-300 rounded-md my-2 md:hidden">
+
+            <div class="">
+                <ul class="flex flex-col content-center justify-center md:flex-row md:justify-around mx-auto ">
+                    <li class="hidden md:block">
+                        <div class="">16.10. - 22.10.23</div>
+                    </li>
+                    <li>
+                        <div class="inline-flex font-bold mr-4">Abteilung:</div>
+                        <div class="inline-flex">IT</div>
+                    </li>
+                    <li>
+                        <div class="inline-flex font-bold mr-4">Betreuerin:</div>
+                        <div class="inline-flex"> Hans Wurst</div>
+                    </li>
+                    <li>
+                        <div class="inline-flex font-bold mr-4">Wochenstunden:</div>
+                        <div class="inline-flex"> 40/40</div>
+                    </li>
+                    <li>
+                        <div class="inline-flex font-bold mr-4">Status:</div>
+                        <div class="inline-flex font-bold text-green-500"> approved</div>
+                    </li>
+                    <li class="hidden md:block">
+                        <a href="/nachweis.html"class="hover:opacity-70">
+                            <img src="img/edit_blue.svg" class="h-6 w-6 inline" alt="edit link">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <hr class="border border-gray-300 hidden md:block">
     </div>
-
-<div class="border-0 md:border-2 border-sky-400 rounded-md p-4 mb-4">
-    <div class="border-2 border-sky-400 rounded-md p-4 mb-4 md:border-0">
-        <div class="flex flex-row justify-between md:hidden">
-            <span>23.10. - 29.10.23</span>
-            <button class="bg-sky-400 hover:bg-sky-600 text-white font-bold py-1 px-4 rounded">
-                öffnen
-            </button>
-
-        </div>
-        <hr class="border border-sky-400 rounded-md my-2 md:hidden">
-
-        <div class="">
-            <ul class="flex flex-col content-center justify-center md:flex-row md:justify-around mx-auto ">
-                <li class="hidden md:block">
-                    <div class="">23.10. - 29.10.23</div>
-                </li>
-                <li>
-                    <div class="inline-flex font-bold mr-4">Abteilung:</div>
-                    <div class="inline-flex">IT</div>
-                </li>
-                <li>
-                    <div class="inline-flex font-bold mr-4">Betreuerin: </div>
-                    <div class="inline-flex"> Hans Wurst </div>
-                </li>
-                <li>
-                    <div class="inline-flex font-bold mr-4">Wochenstunden:</div>
-                    <div class="inline-flex"> 40/40</div>
-                </li>
-                <li>
-                    <div class="inline-flex font-bold mr-4">Status:</div>
-                    <div class="inline-flex font-bold text-red-500"> pending</div>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div class="border-2 border-sky-400 rounded-md p-4 mb-4 md:border-0">
-        <div class="flex flex-row justify-between md:hidden">
-            <span>16.10. - 22.10.23</span>
-            <button class="bg-sky-400 hover:bg-sky-600 text-white font-bold py-1 px-4 rounded">
-                öffnen
-            </button>
-
-        </div>
-        <hr class="border border-sky-400 rounded-md my-2 md:hidden">
-
-        <div class="">
-            <ul class="flex flex-col content-center justify-center md:flex-row md:justify-around mx-auto ">
-                <li class="hidden md:block">
-                    <div class="">16.10. - 22.10.23</div>
-                </li>
-                <li>
-                    <div class="inline-flex font-bold mr-4">Abteilung:</div>
-                    <div class="inline-flex">IT</div>
-                </li>
-                <li>
-                    <div class="inline-flex font-bold mr-4">Betreuerin: </div>
-                    <div class="inline-flex"> Hans Wurst </div>
-                </li>
-                <li>
-                    <div class="inline-flex font-bold mr-4">Wochenstunden:</div>
-                    <div class="inline-flex"> 40/40</div>
-                </li>
-                <li>
-                    <div class="inline-flex font-bold mr-4">Status:</div>
-                    <div class="inline-flex font-bold text-green-500"> approved</div>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-
-</div>
-
-
-
-
 </main>
 
 </body>
