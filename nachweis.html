@@ -38,15 +38,42 @@
     </nav>
 </header>
 
+<div id="popup-wrapper" class="hidden">
+    <div class="absolute top-0 w-full h-full bg-black opacity-50"></div>
+    <div id="popup"
+         class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col gap-4 rounded-xl shadow-xl border-gray-400 border p-4 bg-gray-300 ">
+        <div class="flex flex-row justify-between">
+            <div class="font-bold text-lg">Neuer Eintrag</div>
+            <button onclick="togglePopup()" class="w-8 h-8 rounded-full text-center text-lg text-white font-bold bg-rose-400 hover:bg-rose-600">
+                X
+            </button>
+        </div>
+        ausgeführte Arbeiten:
+        <textarea class="rounded p-2" rows="5" placeholder="Heute habe ich..."></textarea>
+        <div class="flex flex-row gap-4">
+            <div>
+                <label>Stunden</label>
+                <input class="rounded text-center p-1" type="number" value="8">
+            </div>
+            <div>
+                <label>Abteilung</label>
+                <input class="rounded text-center p-1" type="text" value="IT">
+            </div>
+        </div>
+        <button onclick="togglePopup()" class="rounded bg-sky-400 hover:bg-sky-600 p-1 text-white">Speichern</button>
+    </div>
+</div>
+
 <main class="w-full md:p-16 p-6">
-    <div class="mt-10 xl:px-40 flex flex-col items-center lg:flex-row justify-between">
+    <div class="xl:px-40 flex flex-col items-center lg:flex-row justify-between">
         <h1 class="font-bold text-2xl md:text-4xl mb-2">Ausbildungsnachweise</h1>
         <div class="mt-4 lg:mt-0">
             <label for="week" class="mr-4">Für die Woche:</label>
             <div>
-                <button class="px-2 rounded-full bg-gray-200"> < </button>
-                <input id="week" name="week" value="30.10.23 - 05.11.23" type="text" class="border border-gray-300 bg-white rounded-full text-center">
-                <button class="px-2 rounded-full bg-gray-200"> > </button>
+                <button class="px-2 rounded-full bg-gray-200"> <</button>
+                <input id="week" name="week" value="30.10.23 - 05.11.23" type="text"
+                       class="border border-gray-300 bg-white rounded-full text-center">
+                <button class="px-2 rounded-full bg-gray-200"> ></button>
             </div>
         </div>
     </div>
@@ -56,7 +83,8 @@
         <div class="entries-container border border-gray-300 rounded text-xs md:text-sm bg-white">
             <div class="header-row flex-row flex text-center">
                 <div class="border border-gray-300 p-2 hidden md:block w-10 bg-gray-200"></div>
-                <div class="border border-gray-300 p-2 flex-grow bg-gray-200"> Ausgeführte Arbeiten, Unterricht usw.</div>
+                <div class="border border-gray-300 p-2 flex-grow bg-gray-200"> Ausgeführte Arbeiten, Unterricht usw.
+                </div>
                 <div class="border border-gray-300 p-2 w-12 bg-gray-200"> Std.</div>
                 <div class="border border-gray-300 p-2 w-16 md:w-20 bg-gray-200">Std/Tag</div>
                 <div class="border border-gray-300 p-2 hidden md:block w-24 bg-gray-200"> Abteilung</div>
@@ -67,8 +95,11 @@
                     <div class="text-std-button-container flex flex-col">
                         <div class="text-std-container flex flex-row h-12 md:h-16 border-b border-grey">
                             <div class="text-container flex gap-x-2 flex-grow items-center mb-2">
-                                <button class="w-5 h-5 text-sm bg-rose-400 hover:bg-rose-500 text-white rounded-full font-bold mt-1 ml-1">X</button>
-                                <textarea class="w-full h-full p-3 h-auto" style="resize: none;" placeholder="Trage hier ein was du so gemacht hast.">Kaffee getrunken</textarea>
+                                <button class="w-5 h-5 text-sm bg-rose-400 hover:bg-rose-500 text-white rounded-full font-bold mt-1 ml-1">
+                                    X
+                                </button>
+                                <textarea class="w-full h-full p-3 h-auto" style="resize: none;"
+                                          placeholder="Trage hier ein was du so gemacht hast.">Kaffee getrunken</textarea>
                             </div>
                             <div class="std-container p-2 w-12"
                                  style="border-left: 1px grey dotted;">
@@ -76,14 +107,19 @@
                         </div>
                         <div class="text-std-container flex flex-row h-12 md:h-16 border-b border-grey">
                             <div class="text-container flex gap-x-2 flex-grow items-center mb-2">
-                                <button class="w-5 h-5 text-sm bg-rose-400 hover:bg-rose-500 text-white rounded-full font-bold mt-1 ml-1">X</button>
-                                <textarea class="w-full h-full p-3 h-auto" style="resize: none;" placeholder="Trage hier ein was du so gemacht hast.">Website programmiert</textarea>
+                                <button class="w-5 h-5 text-sm bg-rose-400 hover:bg-rose-500 text-white rounded-full font-bold mt-1 ml-1">
+                                    X
+                                </button>
+                                <textarea class="w-full h-full p-3 h-auto" style="resize: none;"
+                                          placeholder="Trage hier ein was du so gemacht hast.">Website programmiert</textarea>
                             </div>
                             <div class="std-container p-2 w-12"
                                  style="border-left: 1px grey dotted;">
                                 <input type="number" value="4" class="w-full h-full"></div>
                         </div>
-                        <button class="w-auto m-1 p-1 rounded text-white bg-sky-400 hover:bg-sky-600">Tätigkeit hinzufügen</button>
+                        <button onclick="togglePopup()" class="w-auto m-1 p-1 rounded text-white bg-sky-400 hover:bg-sky-600">Tätigkeit
+                            hinzufügen
+                        </button>
                     </div>
                 </div>
                 <div class="border border-gray-300 p-2 md:w-20 w-16 font-bold flex items-center justify-center">
@@ -99,14 +135,19 @@
                     <div class="text-std-button-container flex flex-col">
                         <div class="text-std-container flex flex-row h-12 md:h-16 border-b border-grey">
                             <div class="text-container flex gap-x-2 flex-grow items-center mb-2">
-                                <button class="w-5 h-5 text-sm bg-rose-400 hover:bg-rose-500 text-white rounded-full font-bold mt-1 ml-1">X</button>
-                                <textarea class="w-full h-full p-3 h-auto" style="resize: none;" placeholder="Trage hier ein was du so gemacht hast.">Kaffee getrunken</textarea>
+                                <button class="w-5 h-5 text-sm bg-rose-400 hover:bg-rose-500 text-white rounded-full font-bold mt-1 ml-1">
+                                    X
+                                </button>
+                                <textarea class="w-full h-full p-3 h-auto" style="resize: none;"
+                                          placeholder="Trage hier ein was du so gemacht hast.">Kaffee getrunken</textarea>
                             </div>
                             <div class="std-container p-2 w-12"
                                  style="border-left: 1px grey dotted;">
                                 <input type="number" value="4" class="w-full h-full"></div>
                         </div>
-                        <button class="w-auto m-1 p-1 rounded text-white bg-sky-400 hover:bg-sky-600">Tätigkeit hinzufügen</button>
+                        <button onclick="togglePopup()" class="w-auto m-1 p-1 rounded text-white bg-sky-400 hover:bg-sky-600">Tätigkeit
+                            hinzufügen
+                        </button>
                     </div>
                 </div>
                 <div class="border border-gray-300 p-2 md:w-20 w-16 font-bold flex items-center justify-center">
@@ -122,14 +163,19 @@
                     <div class="text-std-button-container flex flex-col">
                         <div class="text-std-container flex flex-row h-12 md:h-16 border-b border-grey">
                             <div class="text-container flex gap-x-2 flex-grow items-center mb-2">
-                                <button class="w-5 h-5 text-sm bg-rose-400 hover:bg-rose-500 text-white rounded-full font-bold mt-1 ml-1">X</button>
-                                <textarea class="w-full h-full p-3 h-auto" style="resize: none;" placeholder="Trage hier ein was du so gemacht hast."></textarea>
+                                <button class="w-5 h-5 text-sm bg-rose-400 hover:bg-rose-500 text-white rounded-full font-bold mt-1 ml-1">
+                                    X
+                                </button>
+                                <textarea class="w-full h-full p-3 h-auto" style="resize: none;"
+                                          placeholder="Trage hier ein was du so gemacht hast."></textarea>
                             </div>
                             <div class="std-container p-2 w-12"
                                  style="border-left: 1px grey dotted;">
                                 <input type="number" placeholder="0" class="w-full h-full"></div>
                         </div>
-                        <button class="w-auto m-1 p-1 rounded text-white bg-sky-400 hover:bg-sky-600">Tätigkeit hinzufügen</button>
+                        <button onclick="togglePopup()" class="w-auto m-1 p-1 rounded text-white bg-sky-400 hover:bg-sky-600">Tätigkeit
+                            hinzufügen
+                        </button>
                     </div>
                 </div>
                 <div class="border border-gray-300 text-gray-400 p-2 md:w-20 w-16 font-bold flex items-center justify-center">
@@ -145,14 +191,19 @@
                     <div class="text-std-button-container flex flex-col">
                         <div class="text-std-container flex flex-row h-12 md:h-16 border-b border-grey">
                             <div class="text-container flex gap-x-2 flex-grow items-center mb-2">
-                                <button class="w-5 h-5 text-sm bg-rose-400 hover:bg-rose-500 text-white rounded-full font-bold mt-1 ml-1">X</button>
-                                <textarea class="w-full h-full p-3 h-auto" style="resize: none;" placeholder="Trage hier ein was du so gemacht hast."></textarea>
+                                <button class="w-5 h-5 text-sm bg-rose-400 hover:bg-rose-500 text-white rounded-full font-bold mt-1 ml-1">
+                                    X
+                                </button>
+                                <textarea class="w-full h-full p-3 h-auto" style="resize: none;"
+                                          placeholder="Trage hier ein was du so gemacht hast."></textarea>
                             </div>
                             <div class="std-container p-2 w-12"
                                  style="border-left: 1px grey dotted;">
                                 <input type="number" placeholder="0" class="w-full h-full"></div>
                         </div>
-                        <button class="w-auto m-1 p-1 rounded text-white bg-sky-400 hover:bg-sky-600">Tätigkeit hinzufügen</button>
+                        <button onclick="togglePopup()" class="w-auto m-1 p-1 rounded text-white bg-sky-400 hover:bg-sky-600">Tätigkeit
+                            hinzufügen
+                        </button>
                     </div>
                 </div>
                 <div class="border border-gray-300 text-gray-400 p-2 md:w-20 w-16 font-bold flex items-center justify-center">
@@ -168,14 +219,19 @@
                     <div class="text-std-button-container flex flex-col">
                         <div class="text-std-container flex flex-row h-12 md:h-16 border-b border-grey">
                             <div class="text-container flex gap-x-2 flex-grow items-center mb-2">
-                                <button class="w-5 h-5 text-sm bg-rose-400 hover:bg-rose-500 text-white rounded-full font-bold mt-1 ml-1">X</button>
-                                <textarea class="w-full h-full p-3 h-auto" style="resize: none;" placeholder="Trage hier ein was du so gemacht hast."></textarea>
+                                <button class="w-5 h-5 text-sm bg-rose-400 hover:bg-rose-500 text-white rounded-full font-bold mt-1 ml-1">
+                                    X
+                                </button>
+                                <textarea class="w-full h-full p-3 h-auto" style="resize: none;"
+                                          placeholder="Trage hier ein was du so gemacht hast."></textarea>
                             </div>
                             <div class="std-container p-2 w-12"
                                  style="border-left: 1px grey dotted;">
                                 <input type="number" placeholder="0" class="w-full h-full"></div>
                         </div>
-                        <button class="w-auto m-1 p-1 rounded text-white bg-sky-400 hover:bg-sky-600">Tätigkeit hinzufügen</button>
+                        <button onclick="togglePopup()" class="w-auto m-1 p-1 rounded text-white bg-sky-400 hover:bg-sky-600">Tätigkeit
+                            hinzufügen
+                        </button>
                     </div>
                 </div>
                 <div class="border border-gray-300 text-gray-400 p-2 md:w-20 w-16 font-bold flex items-center justify-center">
@@ -192,8 +248,10 @@
                 <label for="confirmation">Hiermit bestätige ich, dass ich den Nachweis selbst geschrieben habe.*</label>
             </div>
             <div class="flex align-center">
-                <input type="button" class="w-auto m-1 p-2 rounded text-white bg-blue-400 hover:bg-blue-600" value="Speichern">
-                <input type="button" class="w-auto m-1 p-2 rounded text-white bg-blue-400 hover:bg-blue-600" value="Ausbildungsnachweis abschicken">
+                <input type="button" class="w-auto m-1 p-2 rounded text-white bg-blue-400 hover:bg-blue-600"
+                       value="Speichern">
+                <input type="button" class="w-auto m-1 p-2 rounded text-white bg-blue-400 hover:bg-blue-600"
+                       value="Ausbildungsnachweis abschicken">
             </div>
         </div>
     </div>
@@ -211,6 +269,12 @@
             mobileMenu.classList.add('hidden');
         })
     })
+
+    function togglePopup() {
+        const popup = document.querySelector('#popup-wrapper');
+        popup.classList.contains('hidden') ? popup.classList.remove('hidden') : popup.classList.add('hidden');
+    }
+
 </script>
 
 
